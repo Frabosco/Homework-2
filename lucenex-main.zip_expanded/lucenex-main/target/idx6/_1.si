@@ -1,0 +1,28 @@
+    version 9.8.0
+    min version 9.8.0
+    number of documents 2
+    uses compound file true
+    diagnostics 8
+      key source
+      value flush
+      key lucene.version
+      value 9.8.0
+      key os.version
+      value 10.0
+      key os.arch
+      value amd64
+      key os
+      value Windows 11
+      key java.vendor
+      value Eclipse Adoptium
+      key java.runtime.version
+      value 17.0.2+8
+      key timestamp
+      value 1698218997082
+    attributes 0
+    files 2
+      file _1.si
+      file _1.scf
+    id =o2½ÿÚocÿÍ‹-›
+    sort 0
+checksum 00000000002858174481
