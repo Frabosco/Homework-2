@@ -44,7 +44,7 @@ public class Main {
 		System.out.print("inserire query:");
 		try (Scanner scanner = new Scanner(System.in)) {
 			String query = scanner.nextLine();
-			eeseguiQuery("contenuto", query);
+			eeseguiQuery("contentuto", query);
 		}
 		
 	}
@@ -64,13 +64,16 @@ public class Main {
 		Directory indexDirectory = FSDirectory.open(Paths.get("opt/lucene-index"));
 	    IndexWriter indexWriter = new IndexWriter(indexDirectory, indexWriterConfig);
 	    Document document = new Document();
-
+	    long start = System.currentTimeMillis();
+	
 	    FileReader fileReader = new FileReader(file);
 	    document.add(new TextField("contenuto", fileReader));
-	    document.add(new StringField("titolo", file.getName(), Field.Store.YES));
+	    document.add(new StringField("titolo", file.getName().substring(0, file.getName().length()-4), Field.Store.YES));
 
 	    indexWriter.addDocument(document);
 	    indexWriter.close();
+		 long finish = System.currentTimeMillis();
+		 System.out.print(finish - start+"\n");
 	}
 	
 	public static void eeseguiQuery(String inField, String queryString) throws ParseException, IOException {
